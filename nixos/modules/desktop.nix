@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # X11 и Budgie
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Раскладка клавиатуры
   services.xserver.xkb = {

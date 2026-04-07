@@ -6,12 +6,10 @@
   environment.systemPackages = with pkgs; [
     # Инструменты и утилиты
     git
+    kdePackages.kate
     fastfetch       
-    ranger          
-    xfce.thunar     
-    feh  
+    ranger
     pavucontrol     
-    bluez           
     blueman         
     iptables
     wget
@@ -28,45 +26,36 @@
     unzip
     p7zip
     alacritty
-    busybox
-    kdePackages.isoimagewriter
     inetutils
+    rar
     ntfs3g
 
     # Приложения
-    vim
+    brave
+    pkgs-unstable.radio-active
     telegram-desktop
     vlc
-    amnezia-vpn
     throne
     libreoffice-qt
     vesktop
     krita
     qbittorrent
     orca-slicer
-    openvpn
     code-cursor
     python3
     zoom-us
     arduino
     prismlauncher
     remmina
-    boxbuddy
     filezilla
+    #pureref
     gparted
+    pkgs-unstable.crossmacro
     
     # Темы
-    graphite-gtk-theme
-    papirus-icon-theme
     zsh-powerlevel10k
   ];
 
   fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    powerline-fonts
-    dejavu_fonts
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
   ];
 }

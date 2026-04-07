@@ -11,6 +11,5 @@
 
   networking.hostName = "nixos";
 
-  # Это значение менять нельзя, оно фиксирует версию состояния системы
   system.stateVersion = "25.11";
 }

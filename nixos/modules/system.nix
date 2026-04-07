@@ -1,11 +1,14 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, pkgs-unstable, ... }:
 {
   # Загрузчик и ядро
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs-unstable.linuxPackages_latest;
+    kernelParams = [];
+  };
   # Таймзона и локализация
   time.timeZone = "Asia/Chita";
   i18n.defaultLocale = "ru_RU.UTF-8";
@@ -20,23 +23,30 @@
     LC_TELEPHONE = "ru_RU.UTF-8";
     LC_TIME = "ru_RU.UTF-8";
   };
-
   # Автоматическая очистка мусора
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-  
+
   #virtualisation
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
-  
+
   hardware.graphics = {
     enable = true;
-    enable32Bit = true; # Важно для игр!
+    enable32Bit = true;
   };
+
+  services.throttled.enable = true;
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
+  hardware.firmware = [
+    pkgs.linux-firmware
+  ];
 }

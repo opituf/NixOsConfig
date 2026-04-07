@@ -8,10 +8,5 @@
   services.resolved.enable = true;
   services.zerotierone.enable = true;
 
-  # Модули ядра для сети
-  boot.initrd = {
-    supportedFilesystems = [ "nfs" ];
-    kernelModules = [ "nfs" ];
-  };
   boot.kernelModules = [ "tun" ];
 }
