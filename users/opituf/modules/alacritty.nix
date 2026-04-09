@@ -11,8 +11,6 @@
           style = "Bold";
         };
       };
-
-      colors.primary.background = "#1d2021";
     };
   };
 }

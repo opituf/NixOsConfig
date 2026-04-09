@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   services.xserver.enable = true;
@@ -31,6 +31,18 @@
   # Порталы
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-gtk 
+    ];
+    config = {
+      KDE.default = "kde";
+      common.degfault = "*";
+    };
+  };
+  
+  stylix = {
+    enable = true;
   };
 }
