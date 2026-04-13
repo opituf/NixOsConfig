@@ -16,7 +16,7 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     stylix = {
@@ -44,7 +44,7 @@
 
     in {
       nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs pkgs-unstable; };
         modules = [ ./nixos/configuration.nix ];
       };
 

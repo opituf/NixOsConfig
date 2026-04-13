@@ -51,7 +51,17 @@
     #pureref
     gparted
     pkgs-unstable.crossmacro
-    
+
+    fuzzel
+    grim
+    slurp
+    swappy
+    wl-clipboard
+    alsa-utils
+    xwayland-satellite
+    swaybg
+    pkgs-unstable.noctalia-shell    
+
     # Темы
     zsh-powerlevel10k
   ];

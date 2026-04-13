@@ -42,6 +42,8 @@
     enable32Bit = true;
   };
 
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
   services.throttled.enable = true;
 
   hardware.enableRedistributableFirmware = true;
