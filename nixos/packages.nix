@@ -15,7 +15,7 @@
     wget
     piper
     neofetch
-    htop
+    btop
     nfs-utils
     home-manager
     gnumake
@@ -52,6 +52,7 @@
     gparted
     vlc
     pkgs-unstable.crossmacro
+    zathuraPkgs.zathura_core
 
     fuzzel
     grim
@@ -61,7 +62,9 @@
     alsa-utils
     xwayland-satellite
     swaybg
-    pkgs-unstable.noctalia-shell    
+    pkgs-unstable.noctalia-shell
+    imv
+    yazi
 
     # Темы
     zsh-powerlevel10k

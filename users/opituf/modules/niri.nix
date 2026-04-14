@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  terminal = "alacritty";
+  terminal  = "alacritty";
   noctalia  = "noctalia";
   grim      = "grim";
   slurp     = "slurp";
@@ -15,8 +15,6 @@ in
   programs.niri = {
     enable = true;
 
-    # IMPORTANT: use .settings, NOT .config (raw KDL string).
-    # Stylix injects border colors into .settings — .config would override them.
     settings = {
       prefer-no-csd = true;
 
@@ -45,13 +43,15 @@ in
       layout = {
         gaps = 3;
 
+        default-column-width = { proportion = 0.5; };
+
         focus-ring = {
           enable = true;
           width  = 2;
           # Stylix sets active / inactive colors automatically via the niri target.
           # Uncomment to override:
-          # active.color   = "#${config.lib.stylix.colors.base09}ff";
-          # inactive.color = "#${config.lib.stylix.colors.base03}ff";
+          active.color   = "#${config.lib.stylix.colors.base09}ff";
+          inactive.color = "#${config.lib.stylix.colors.base03}ff";
         };
       };
 
@@ -145,9 +145,6 @@ in
         # Clipboard → swappy (annotate)
         "${mod}+Shift+E".action = sh "${wlPaste} | ${swappy} -f -";
 
-        # App launcher menu — Mod+D opens quick-launch binds.
-        # The original used a custom which-key popup; replicate here as direct binds.
-        # Replace with your preferred launcher (rofi, fuzzel, etc.) if desired.
         "${mod}+B".action      = spawn "firefox";
         "${mod}+Ctrl+K".action = spawn "pavucontrol";
         "${mod}+Z".action      = spawn "fuzzel";
