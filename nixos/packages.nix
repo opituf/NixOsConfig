@@ -50,6 +50,7 @@
     filezilla
     #pureref
     gparted
+    vlc
     pkgs-unstable.crossmacro
 
     fuzzel
