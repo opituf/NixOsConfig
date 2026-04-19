@@ -2,13 +2,14 @@
 
 let
   terminal  = "alacritty";
-  noctalia  = "noctalia";
-  grim      = "grim";
-  slurp     = "slurp";
-  swappy    = "$swappy";
-  wlCopy    = "$wl-copy";
-  wlPaste   = "$wl-paste";
-  amixer    = "$amixer";
+  noctalia  = "noctalia-shell";
+
+  grim      = lib.getExe pkgs.grim;
+  slurp     = lib.getExe pkgs.slurp;
+  swappy    = lib.getExe pkgs.swappy;
+  wlCopy    = "${pkgs.wl-clipboard}/bin/wl-copy";
+  wlPaste   = "${pkgs.wl-clipboard}/bin/wl-paste";
+  amixer    = "${pkgs.alsa-utils}/bin/amixer";
 
 in
 {
@@ -85,10 +86,10 @@ in
         "${mod}+Down".action  = focus-window-down;
 
         # Window / column movement
-        "${mod}+Shift+Left".action = move-column-left;
+        "${mod}+Shift+Left".action  = move-column-left;
         "${mod}+Shift+Right".action = move-column-right;
-        "${mod}+Shift+Up".action = move-window-up;
-        "${mod}+Shift+Down".action = move-window-down;
+        "${mod}+Shift+Up".action    = move-window-up;
+        "${mod}+Shift+Down".action  = move-window-down;
 
         # Workspace focus
         "${mod}+1".action.focus-workspace = 1;
@@ -113,11 +114,15 @@ in
         "${mod}+Shift+9".action.move-column-to-workspace = 9;
         "${mod}+Shift+0".action.move-column-to-workspace = 10;
 
+        "${mod}+BracketLeft".action  = consume-or-expel-window-left;
+        "${mod}+BracketRight".action = consume-or-expel-window-right;
+        "${mod}+M".action = show-hotkey-overlay;
+
         # Resize
         "${mod}+A".action = set-column-width "-5%";
         "${mod}+D".action = set-column-width "+5%";
-        "${mod}+W".action = set-window-height "-5%";
-        "${mod}+S".action = set-window-height "+5%";
+        "${mod}+S".action = set-window-height "-5%";
+        "${mod}+W".action = set-window-height "+5%";
 
         # Scroll to navigate columns / workspaces
         "${mod}+WheelScrollDown".action      = focus-column-left;
@@ -129,11 +134,20 @@ in
         "${mod}+N".action = sh "${noctalia} ipc call launcher toggle";
 
         # Microphone toggle
-        "${mod}+V".action = sh "${amixer} sset Capture toggle";
+        "XF86AudioMicMute".action = sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
         # Volume
         "XF86AudioRaiseVolume".action = sh "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+";
         "XF86AudioLowerVolume".action = sh "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86AudioMute".action        = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+
+        # Brightness
+        "XF86MonBrightnessUp".action   = sh "brightnessctl set 5%+";
+        "XF86MonBrightnessDown".action = sh "brightnessctl set 5%-";
+        
+        "XF86Bluetooth".action = sh "${noctalia} ipc call bluetooth toggle";
+
+        "XF86Tools".action = spawn terminal "--working-directory" "/home/opituf/.dotfiles";
 
         # Screenshots
         # Full-screen → clipboard

@@ -29,6 +29,7 @@
     inetutils
     rar
     ntfs3g
+    brightnessctl
 
     # Приложения
     brave

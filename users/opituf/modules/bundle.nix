@@ -5,5 +5,6 @@
     ./git.nix
     ./stylix.nix
     ./niri.nix
+    #./noctalia.nix
   ];
 }
