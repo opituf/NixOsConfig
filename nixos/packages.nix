@@ -32,6 +32,7 @@
     brightnessctl
 
     # Приложения
+    neovim
     brave
     pkgs-unstable.radio-active
     telegram-desktop
@@ -54,6 +55,7 @@
     vlc
     pkgs-unstable.crossmacro
     zathuraPkgs.zathura_core
+    winbox
 
     fuzzel
     grim

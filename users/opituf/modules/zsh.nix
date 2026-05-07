@@ -5,6 +5,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    initContent = ''
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7a3a3a"
+    '';
+
     shellAliases =
       let
         flakeDir = "~/.dotfiles";
@@ -25,7 +29,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" ];
-      theme = "bureau"; # blinks is also really nice
+      theme = "bureau";
     };
   };
 }

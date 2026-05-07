@@ -8,6 +8,7 @@
     targets = {
       noctalia-shell.enable = false;
       alacritty.enable = false;
+      #steam.enable = false;
     };
   };
 }

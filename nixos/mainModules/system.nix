@@ -40,10 +40,21 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      mesa
+      vulkan-loader
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      intel-vaapi-driver
+      mesa
+    ];
   };
 
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
+
   services.throttled.enable = true;
 
   hardware.enableRedistributableFirmware = true;

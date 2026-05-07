@@ -19,6 +19,13 @@ in
     settings = {
       prefer-no-csd = true;
 
+    outputs."EDP-1" = {
+     enable = true;
+     mode.width = 1920;
+     mode.height = 1080;
+     mode.refresh = 60.0;
+     scale = 1;
+    };
       # ── Input ──────────────────────────────────────────────────────────────
       input = {
         focus-follows-mouse.enable = true;
