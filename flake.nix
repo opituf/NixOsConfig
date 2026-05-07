@@ -53,7 +53,7 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [ 
           ./users/opituf/home.nix
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           niri.homeModules.niri
           noctalia.homeModules.default
         ];

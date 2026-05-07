@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  ...}:
 
 {
   security.wrappers.nekobox_core= {
@@ -11,4 +11,10 @@
     enable = true;
     tunMode.enable = true;
   };
+  
+  networking.firewall.checkReversePath = "loose";
+  services.resolved.enable = true;
+  services.zerotierone.enable = true;
+
+  boot.kernelModules = [ "tun" ];
 }

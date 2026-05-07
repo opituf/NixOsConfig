@@ -2,10 +2,10 @@
   imports = [
     ./apps.nix
     ./desktop.nix
-    ./nas_config.nix
+    ./garb_clear.nix
+    ./localisation.nix
     ./networking.nix
     ./system.nix
-    ./thronesetup.nix
     ./user.nix
   ];
 }
