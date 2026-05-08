@@ -1,5 +1,15 @@
 { config, pkgs, ...}:
 {
+  boot.kernelParams = [
+    "i915.enable_psr=0"
+    "nvme_core.default_ps_max_latency_us=0"
+  ];
+
+  boot.extraModprobeConfig = ''
+    options iwlwifi power_save=0 uapsd_disable=1
+    options iwlmvm power_scheme=1
+  '';
+
   services.throttled.enable = true;
   services.libinput.enable = true;
 
