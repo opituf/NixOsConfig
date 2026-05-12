@@ -9,6 +9,7 @@
       noctalia-shell.enable = false;
       alacritty.enable = false;
       #steam.enable = false;
+      yazi.enable = false;
     };
   };
 }

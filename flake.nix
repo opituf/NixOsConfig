@@ -29,9 +29,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, niri, noctalia, stylix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, niri, noctalia, stylix, silentSDDM, ... }:
 
     let
       system = "x86_64-linux";
@@ -45,7 +50,10 @@
     in {
       nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs pkgs-unstable; };
-        modules = [ ./nixos/configuration.nix ];
+        modules = [
+          ./nixos/configuration.nix
+          inputs.silentSDDM.nixosModules.default
+        ];
       };
 
       homeConfigurations.${userName} = home-manager.lib.homeManagerConfiguration {

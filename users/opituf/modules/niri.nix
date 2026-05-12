@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  terminal  = "alacritty";
+  terminal  = "kitty";
   noctalia  = "noctalia-shell";
 
   grim      = lib.getExe pkgs.grim;

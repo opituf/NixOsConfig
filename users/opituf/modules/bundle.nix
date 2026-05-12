@@ -6,5 +6,7 @@
     ./stylix.nix
     ./niri.nix
     ./noctalia.nix
+    ./kitty.nix
+    ./yazi.nix
   ];
 }

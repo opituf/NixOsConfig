@@ -23,7 +23,8 @@
     brightnessctl
     alsa-utils
     yazi
-    
+    kitty
+    rustup
 
     # Приложения
     neovim
@@ -40,5 +41,8 @@
         
     # Темы
     zsh-powerlevel10k
+  ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 }

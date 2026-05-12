@@ -1,11 +1,9 @@
-{ pkgs, inputs, pkgs-unstable, ... }:
+{ pkgs, inputs, pkgs-unstable, lib, ... }:
 {
   programs.niri.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  imports = [ ../sddm/sddm.nix ];
+  services.displayManager.sddm.wayland.enable = lib.mkForce true;
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
