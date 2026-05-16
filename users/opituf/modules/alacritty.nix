@@ -14,32 +14,32 @@
       };
       colors = {
         primary = {
-          background = "#261b26";
-          foreground = "#fdd0d0";
+         background = "#101010";
+         foreground = "#ebeade";
         };
         cursor = {
           text = "CellBackground";
-          cursor = "#f2706c";
+          cursor = "#00ff16";
         };
         normal = {
-          black   = "#4a2030";
-          red     = "#d12a23";
-          green   = "#f66151";
-          yellow  = "#ff7800";
-          blue    = "#e9c2c9";
-          magenta = "#c0304a";
-          cyan    = "#d97b7b";
-          white   = "#f9ece9";
+          black = "#2b2b2b";
+          red = "#00ff16";
+          green = "#088513";
+          yellow = "#8e8e8e";
+          blue = "#686868";
+          magenta = "#b9b9b9";
+          cyan = "#0dc51d";
+          white = "#ffffff"; 
         };
         bright = {
-          black   = "#4a2030";
-          red     = "#d12a23";
-          green   = "#f66151";
-          yellow  = "#ff7800";
-          blue    = "#e9c2c9";
-          magenta = "#c0304a";
-          cyan    = "#d97b7b";
-          white   = "#f9ece9";
+          black = "#2b2b2b";
+          red = "#00ff16";
+          green = "#088513";
+          yellow = "#8e8e8e";
+          blue = "#686868";
+          magenta = "#b9b9b9";
+          cyan = "#0dc51d";
+          white = "#ffffff";
         };
       };
     };

@@ -6,7 +6,7 @@
     syntaxHighlighting.enable = true;
 
     initContent = ''
-      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7a3a3a"
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7c7c"
     '';
 
     shellAliases =

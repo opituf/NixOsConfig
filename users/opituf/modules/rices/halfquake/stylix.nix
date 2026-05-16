@@ -2,13 +2,11 @@
 {
   stylix = {
     enable = true;
-    image = ../wallpaper/Teto.png;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-dune.yaml";
+    base16Scheme = ./nonix/theme.yaml;
     autoEnable = true;
     targets = {
       noctalia-shell.enable = false;
       alacritty.enable = false;
-      #steam.enable = false;
       yazi.enable = false;
     };
   };

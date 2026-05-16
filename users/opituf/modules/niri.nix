@@ -67,8 +67,6 @@ in
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
       # ── Startup ───────────────────────────────────────────────────────────
-      # swaybg is only needed if stylix's niri wallpaper target is disabled;
-      # if stylix handles the wallpaper you can remove that entry.
       spawn-at-startup = [
         { command = [ "noctalia-shell" ]; }
       ];
