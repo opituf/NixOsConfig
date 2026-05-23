@@ -25,6 +25,10 @@
     yazi
     kitty
     rustup
+    tldr
+    pkgs-unstable.fresh-editor
+    nil
+    tty-clock
 
     # Приложения
     neovim
@@ -38,7 +42,7 @@
     remmina
     filezilla
     gparted
-        
+
     # Темы
     zsh-powerlevel10k
   ];

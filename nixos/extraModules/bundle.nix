@@ -1,7 +1,7 @@
 {
   imports = [
 #    ./create/create.nix
-#    ./gaming/gaming.nix
+    ./gaming/gaming.nix
     ./laptop/laptop.nix
     ./niri/niri.nix
 #    ./plasma/plasma.nix

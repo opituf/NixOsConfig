@@ -3,10 +3,7 @@
 
   inputs = {
 
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-25.11";
-    };
- 
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -33,7 +30,6 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, niri, noctalia, stylix, silentSDDM, ... }:
