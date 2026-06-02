@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   services.desktopManager.plasma6.enable = true;
+  imports = [ ./sddm.nix ];
   
   xdg.portal = {
     enable = true;

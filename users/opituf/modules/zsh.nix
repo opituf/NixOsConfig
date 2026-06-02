@@ -9,20 +9,6 @@
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7c7c"
     '';
 
-    shellAliases =
-      let
-        flakeDir = "~/.dotfiles";
-      in {
-      rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-      upd = "nix flake update --flake ${flakeDir}";
-      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
-
-      hms = "home-manager switch --flake ${flakeDir}";
-
-      conf = "nano ${flakeDir}/nixos/configuration.nix";
-      pkgs = "nano ${flakeDir}/nixos/packages.nix";
-    };
-
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 

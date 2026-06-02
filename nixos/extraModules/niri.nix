@@ -2,7 +2,7 @@
 {
   programs.niri.enable = true;
 
-  imports = [ ../sddm/sddm.nix ];
+  imports = [ ./sddm.nix ];
   services.displayManager.sddm.wayland.enable = lib.mkForce true;
 
   environment.systemPackages = with pkgs; [

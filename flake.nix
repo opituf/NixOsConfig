@@ -3,7 +3,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -37,17 +37,24 @@
     let
       system = "x86_64-linux";
       userName = "opituf";
-      hostName = "nixos";
       pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
 
     in {
-      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs pkgs-unstable; };
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/desktop/configuration.nix
+          inputs.silentSDDM.nixosModules.default
+        ];
+      };
+
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs pkgs-unstable; };
+        modules = [
+          ./hosts/laptop/configuration.nix
           inputs.silentSDDM.nixosModules.default
         ];
       };

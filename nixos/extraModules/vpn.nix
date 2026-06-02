@@ -13,8 +13,12 @@
   };
   
   networking.firewall.checkReversePath = "loose";
-  services.resolved.enable = true;
   services.zerotierone.enable = true;
 
   boot.kernelModules = [ "tun" ];
+
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
+  };
 }

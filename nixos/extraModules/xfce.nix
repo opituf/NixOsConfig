@@ -5,7 +5,7 @@
     desktopManager.xfce.enable = true;
   };
 
-  imports = [ ../sddm/sddm.nix ];
+  imports = [ ./sddm.nix ];
 
   systemd.user.services.polkit-gnome = {
     description = "Polkit GNOME agent";
