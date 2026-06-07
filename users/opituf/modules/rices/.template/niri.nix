@@ -68,7 +68,7 @@ in
 
       # ── Startup ───────────────────────────────────────────────────────────
       spawn-at-startup = [
-        { command = [ "noctalia-shell" ]; }
+        { sh = "QT_QPA_PLATFORMTHEME=gtk3 noctalia-shell"; }
       ];
 
       # ── Keybinds ──────────────────────────────────────────────────────────
