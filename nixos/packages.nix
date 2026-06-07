@@ -29,6 +29,7 @@
     pkgs-unstable.fresh-editor
     nil
     tty-clock
+    ffmpeg
 
     # Приложения
     neovim
@@ -42,6 +43,7 @@
     remmina
     filezilla
     gparted
+    kdePackages.kcalc 
 
     # Темы
     zsh-powerlevel10k
