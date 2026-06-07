@@ -1,7 +1,7 @@
 { config, ... }:
 let
   flakeDir = "~/.dotfiles";
-  host     = "desktop";
+  host     = "laptop";
 in
 {
   programs.zsh = {
