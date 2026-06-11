@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     blueman  
-    xfce.xfce4-power-manager
-    xfce.xfce4-pulseaudio-plugin
+    xfce4-power-manager
+    xfce4-pulseaudio-plugin
   ];
 }
