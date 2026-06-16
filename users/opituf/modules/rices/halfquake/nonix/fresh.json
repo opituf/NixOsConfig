@@ -1,0 +1,83 @@
+{
+  "name": "sadism",
+
+  "editor": {
+    "bg": [16, 16, 16],
+    "fg": [235, 234, 222],
+
+    "cursor": [255, 255, 255],
+    "inactive_cursor": [104, 104, 104],
+
+    "selection_bg": [43, 43, 43],
+    "current_line_bg": [28, 28, 28],
+
+    "line_number_fg": [104, 104, 104],
+    "line_number_bg": [16, 16, 16],
+
+    "whitespace_indicator_fg": [104, 104, 104],
+
+    "diff_add_bg": [8, 133, 19],
+    "diff_modify_bg": [43, 43, 43],
+    "diff_remove_bg": [40, 0, 0]
+  },
+
+  "ui": {
+    "tab_active_fg": [255, 255, 255],
+    "tab_active_bg": [8, 133, 19],
+
+    "tab_inactive_fg": [185, 185, 185],
+    "tab_inactive_bg": [28, 28, 28],
+
+    "tab_separator_bg": [16, 16, 16],
+
+    "status_bar_fg": [235, 234, 222],
+    "status_bar_bg": [16, 16, 16],
+
+    "menu_bg": [28, 28, 28],
+    "menu_fg": [235, 234, 222],
+
+    "menu_highlight_bg": [8, 133, 19],
+    "menu_highlight_fg": [255, 255, 255],
+
+    "popup_bg": [16, 16, 16],
+    "popup_text_fg": [235, 234, 222],
+
+    "scrollbar_track_fg": [43, 43, 43],
+    "scrollbar_thumb_fg": [104, 104, 104],
+
+    "split_separator_fg": [43, 43, 43]
+  },
+
+  "syntax": {
+    "keyword": [0, 255, 22],
+    "string": [13, 197, 29],
+    "comment": [104, 104, 104],
+
+    "function": [185, 185, 185],
+    "type": [142, 142, 142],
+
+    "variable": [235, 234, 222],
+    "constant": [13, 197, 29],
+
+    "operator": [235, 234, 222]
+  },
+
+  "diagnostic": {
+    "error_fg": [0, 255, 22],
+    "error_bg": [16, 16, 16],
+
+    "warning_fg": [142, 142, 142],
+    "warning_bg": [28, 28, 28],
+
+    "info_fg": [185, 185, 185],
+    "info_bg": [16, 16, 16],
+
+    "hint_fg": [104, 104, 104],
+    "hint_bg": [16, 16, 16]
+  },
+
+  "search": {
+    "match_bg": [8, 133, 19],
+    "match_fg": [255, 255, 255]
+  }
+}

@@ -14,6 +14,8 @@ in
       hms = "home-manager switch --flake ${flakeDir}";
 
       pkgs = "nano ${flakeDir}/nixos/packages.nix";
+      
+      dv = "nix develop";
     };
   };
 }

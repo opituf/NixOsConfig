@@ -27,8 +27,8 @@
     rustup
     tldr
     pkgs-unstable.fresh-editor
+    python313Packages.python-lsp-server
     nil
-    tty-clock
     ffmpeg
 
     # Приложения
