@@ -7,6 +7,7 @@
     ./../../nixos/mainModules/bundle.nix
     ./extraBundle.nix
     ./aliases.nix
+    ./desktop.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

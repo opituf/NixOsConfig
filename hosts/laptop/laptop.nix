@@ -17,6 +17,7 @@
     extraPackages = with pkgs; [
       intel-media-driver
       intel-vaapi-driver
+      intel-compute-runtime-legacy1
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-vaapi-driver
