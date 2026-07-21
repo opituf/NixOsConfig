@@ -15,6 +15,7 @@
     pkgs-unstable.noctalia-shell
     imv
     fuzzel
+    xhost
   ];
 
   xdg.portal = {
