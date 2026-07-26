@@ -3,5 +3,6 @@
     ./kitty.nix
     ./niri.nix
     ./yazi.nix
+    ./fuzzel.nix
   ];
 }

@@ -21,10 +21,10 @@ in
 
     outputs."EDP-1" = {
      enable = true;
-     mode.width = 1920;
-     mode.height = 1080;
+     mode.width = 2560;
+     mode.height = 1440;
      mode.refresh = 60.0;
-     scale = 1;
+     scale = 1.25;
     };
       # ── Input ──────────────────────────────────────────────────────────────
       input = {

@@ -9,5 +9,4 @@ in
     settings = lib.mkForce allData.settings;
   };
   home.file.".config/noctalia/colorschemes/Sadism/Sadism.json".source = ./nonix/Sadism.json;
-  home.file."~/Sadism/Sadism.json".source = ./nonix/Sadism.json;
 }
