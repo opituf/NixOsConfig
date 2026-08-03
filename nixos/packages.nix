@@ -44,6 +44,7 @@
     filezilla
     gparted
     kdePackages.kcalc 
+    pkgs-unstable.obsidian
 
     # Темы
     zsh-powerlevel10k
