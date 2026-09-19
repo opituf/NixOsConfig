@@ -40,8 +40,10 @@ in
         };
 
         touchpad = {
-          natural-scroll = true;
-          tap            = true;
+          natural-scroll             = true;
+          tap                        = true;
+          dwt                        = true;
+          disabled-on-external-mouse = true;
         };
 
         mouse.accel-profile = "flat";

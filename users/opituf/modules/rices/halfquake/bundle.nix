@@ -2,7 +2,7 @@
   imports = [
     ./noctalia.nix    
     ./stylix.nix
-    ./fastfetch.nix
+    #./fastfetch.nix
     ./fresh.nix
     ./../.template/bundle.nix
   ];

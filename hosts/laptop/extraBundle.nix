@@ -5,5 +5,6 @@
     ./../../nixos/extraModules/niri.nix
     ./../../nixos/extraModules/virt.nix
     ./../../nixos/extraModules/vpn.nix
+    ./../../nixos/extraModules/gaming.nix
   ];
 }
