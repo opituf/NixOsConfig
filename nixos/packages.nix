@@ -45,7 +45,7 @@
     gparted
     kdePackages.kcalc 
     pkgs-unstable.obsidian
-
+    burpsuite
     # Темы
     zsh-powerlevel10k
   ];

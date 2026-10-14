@@ -11,28 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    stylix = {
-      url = "github:nix-community/stylix/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, niri, noctalia, stylix, silentSDDM, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, ... }:
 
     let
       system = "x86_64-linux";
@@ -64,9 +49,6 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [ 
           ./users/opituf/home.nix
-          stylix.homeModules.stylix
-          niri.homeModules.niri
-          noctalia.homeModules.default
         ];
       };
     };
