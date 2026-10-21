@@ -15,9 +15,16 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    burpsuitepro = {
+      type = "github";
+      owner = "xiv3r";
+      repo = "Burpsuite-Professional";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, silentSDDM, burpsuitepro, ... }:
 
     let
       system = "x86_64-linux";

@@ -1,0 +1,15 @@
+#!/bin/sh
+for b in /sys/class/power_supply/BAT*; do
+  [ -d "$b" ] || continue
+  if [ -f "$b/power_now" ]; then
+    # мкВт → Вт
+    awk '{ printf "%.1fW", $1/1000000 }' "$b/power_now"
+    exit 0
+  fi
+  if [ -f "$b/current_now" ] && [ -f "$b/voltage_now" ]; then
+    awk 'BEGIN{c=0;v=0} NR==1{c=$1} NR==2{v=$1} END{printf "%.1fW", (c*v)/1e12}' \
+      "$b/current_now" "$b/voltage_now"
+    exit 0
+  fi
+done
+echo "0.0W"

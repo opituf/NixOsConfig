@@ -1,0 +1,15 @@
+#!/bin/sh
+for b in /sys/class/power_supply/BAT*; do
+  [ -d "$b" ] || continue
+  cap=$(cat "$b/capacity")
+  stat=$(cat "$b/status")
+  case "$stat" in
+    Charging)    icon="+" ;;
+    Discharging) icon="-" ;;
+    Full)        icon="=" ;;
+    *)           icon="?" ;;
+  esac
+  echo "${icon}${cap}%"
+  exit 0
+done
+echo "N/A"

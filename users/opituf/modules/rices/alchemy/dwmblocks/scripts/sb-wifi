@@ -1,0 +1,14 @@
+#!/bin/sh
+export PATH="/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH"
+
+# Берём IP с активного интерфейса (wifi или ethernet)
+ip=$(ip -4 -o addr show scope global 2>/dev/null \
+  | awk '{ print $4 }' \
+  | cut -d/ -f1 \
+  | head -n1)
+
+if [ -n "$ip" ]; then
+  echo "$ip"
+else
+  echo "off"
+fi

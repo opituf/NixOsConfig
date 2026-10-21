@@ -7,5 +7,6 @@
     ./../../nixos/extraModules/vpn.nix
 #    ./../../nixos/extraModules/gaming.nix
     ./../../nixos/extraModules/dwm.nix
+    ./../../nixos/extraModules/burp.nix
   ];
 }

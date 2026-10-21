@@ -24,18 +24,18 @@
     alsa-utils
     yazi
     kitty
-    rustup
     tldr
     pkgs-unstable.fresh-editor
     python313Packages.python-lsp-server
     nil
     ffmpeg
+    wget
+    bluetui
 
     # Приложения
     neovim
     brave
     pkgs-unstable.radio-active
-    telegram-desktop
     vlc
     libreoffice-qt
     qbittorrent

@@ -1,0 +1,4 @@
+#!/bin/sh
+# brightnessctl
+bri=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
+echo "${bri}%"
