@@ -1,15 +1,35 @@
+
 #!/bin/sh
+
+total_now=0
+total_full=0
+found=0
+
 for b in /sys/class/power_supply/BAT*; do
-  [ -d "$b" ] || continue
-  cap=$(cat "$b/capacity")
-  stat=$(cat "$b/status")
-  case "$stat" in
-    Charging)    icon="+" ;;
-    Discharging) icon="-" ;;
-    Full)        icon="=" ;;
-    *)           icon="?" ;;
-  esac
-  echo "${icon}${cap}%"
-  exit 0
+    [ -d "$b" ] || continue
+
+    if [ -r "$b/energy_now" ] && [ -r "$b/energy_full" ]; then
+        now=$(cat "$b/energy_now")
+        full=$(cat "$b/energy_full")
+    elif [ -r "$b/charge_now" ] && [ -r "$b/charge_full" ] &&
+         [ -r "$b/voltage_now" ]; then
+        voltage=$(cat "$b/voltage_now")
+        now=$(awk -v c="$(cat "$b/charge_now")" -v v="$voltage" \
+            'BEGIN {printf "%.0f", c*v/1000000}')
+        full=$(awk -v c="$(cat "$b/charge_full")" -v v="$voltage" \
+            'BEGIN {printf "%.0f", c*v/1000000}')
+    else
+        continue
+    fi
+
+    total_now=$((total_now + now))
+    total_full=$((total_full + full))
+    found=1
 done
-echo "N/A"
+
+if [ "$found" -eq 1 ] && [ "$total_full" -gt 0 ]; then
+    percent=$((total_now * 100 / total_full))
+    printf '%s%%\n' "$percent"
+else
+    echo "N/A"
+fi

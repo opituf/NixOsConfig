@@ -31,6 +31,7 @@
     ffmpeg
     wget
     bluetui
+    furmark
 
     # Приложения
     neovim

@@ -9,11 +9,11 @@ static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=11" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=11";
 
 /* Цвета (можно потом поменять под свою тему) */
-static const char col_gray1[]       = "#292929"; /* фон бара */
+static const char col_gray1[]       = "#0f1014"; /* фон бара */
 static const char col_gray2[]       = "#313244"; /* неактивная рамка */
 static const char col_gray3[]       = "#cdd6f4"; /* обычный текст */
 static const char col_gray4[]       = "#1e1e2e"; /* текст выделенного */
-static const char col_cyan[]        = "#ffffff"; /* акцент (рамка + фон выделенного) */
+static const char col_cyan[]        = "#e2e4ed"; /* акцент (рамка + фон выделенного) */
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */

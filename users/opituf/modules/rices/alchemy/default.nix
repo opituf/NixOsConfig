@@ -15,7 +15,7 @@ in
     pkgs.wireplumber
   ];
 
-  imports = [ ./fastfetch.nix ];
+  imports = [./additionals/bundle.nix];
   
   home.sessionPath = [ "$HOME/.local/bin" ];
 
@@ -31,6 +31,20 @@ in
       pkill -x dwmblocks 2>/dev/null || true
       ${myDwmblocks}/bin/dwmblocks &
       ${pkgs.dunst}/bin/dunst &
+      ${pkgs.xbanish}/bin/xbanish &
     '';
+  };
+  # в default.nix райса
+  services.picom = {
+    enable = true;
+    settings = {
+      backend = "glx";
+      vsync = true;
+      opacity-rule = [
+        "90:class_g = 'kitty'"
+        "85:class_g = 'Code'"
+        # и т.д.
+      ];
+    };
   };
 }
