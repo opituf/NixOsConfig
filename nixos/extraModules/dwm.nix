@@ -24,7 +24,6 @@
     networkmanager_dmenu
     xbanish
     picom
-    playerctl
     lxappearance
   ];
 }

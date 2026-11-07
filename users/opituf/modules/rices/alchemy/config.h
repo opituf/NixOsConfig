@@ -97,18 +97,19 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	/* Дополнительные удобные бинды */
-	{ 0,      XK_Print,                      spawn, SHCMD("scrot -s") },               /* скриншот области */
-        { 0,      XF86XK_AudioRaiseVolume,  spawn, SHCMD("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+10 dwmblocks") },
-	{ 0, 	  XF86XK_AudioLowerVolume,  spawn, SHCMD("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+10 dwmblocks") },
-	{ 0, 	  XF86XK_AudioMute,         spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+10 dwmblocks") },
-	{ 0, 	  XF86XK_AudioMicMute,      spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle") },
-	{ 0,      XF86XK_MonBrightnessUp,   spawn, SHCMD("brightnessctl set +5%; pkill -RTMIN+11 dwmblocks") },
-	{ 0,      XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 5%-; pkill -RTMIN+11 dwmblocks") },
-        { 0,      XF86XK_Bluetooth,         spawn, SHCMD("bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on") },
-	{ 0,      XF86XK_Favorites,         spawn, SHCMD("xinput list | grep -i touchpad | grep -q 'disabled' && xinput enable \"$(xinput list --name-only | grep -i touchpad)\" || xinput disable \"$(xinput list --name-only | grep -i touchpad)\"") },
-	{ 0,      XF86XK_WLAN,              spawn, SHCMD("nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on") },
-	{ 0,      XF86XK_Tools,             spawn, SHCMD("kitty ~/.dotfiles") },
-	{ MODKEY, XK_b,                     spawn, SHCMD("firefox") },
+	{ 0,                            XK_Print,                 spawn, SHCMD("scrot -s") },
+        { MODKEY|ShftMask,              XK_s,                     spawn, SHCMD("scrot -s - | xclip -selection clipboard -t image/png") },
+        { 0,                            XF86XK_AudioRaiseVolume,  spawn, SHCMD("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+10 dwmblocks") },
+	{ 0, 	                        XF86XK_AudioLowerVolume,  spawn, SHCMD("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+10 dwmblocks") },
+	{ 0, 	                        XF86XK_AudioMute,         spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+10 dwmblocks") },
+	{ 0, 	                        XF86XK_AudioMicMute,      spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle") },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn, SHCMD("brightnessctl set +5%; pkill -RTMIN+11 dwmblocks") },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 5%-; pkill -RTMIN+11 dwmblocks") },
+        { 0,                            XF86XK_Bluetooth,         spawn, SHCMD("bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on") },
+	{ 0,                            XF86XK_Favorites,         spawn, SHCMD("xinput list | grep -i touchpad | grep -q 'disabled' && xinput enable \"$(xinput list --name-only | grep -i touchpad)\" || xinput disable \"$(xinput list --name-only | grep -i touchpad)\"") },
+	{ 0,                            XF86XK_WLAN,              spawn, SHCMD("nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on") },
+	{ 0,                            XF86XK_Tools,             spawn, SHCMD("kitty ~/.dotfiles") },
+	{ MODKEY,                       XK_b,                     spawn, SHCMD("firefox") },
 };
 
 /* button definitions */
